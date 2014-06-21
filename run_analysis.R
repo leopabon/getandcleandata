@@ -56,5 +56,7 @@ colnames(samsung) = c("Activity", "Subject", features[indexMeanStd, 2])
 ## for each activity and each subject. 
 samsungTidy <- ddply(samsung, .(Activity, Subject), numcolwise(mean))
 
+write.table(samsungTidy, file="tidy.txt", row.names=F, col.names=T)
+
 rm(activity, features, test, testActivity, testData, testSubject, train,
-   trainActivity, trainData, trainSubject, indexMeanStd)
+   trainActivity, trainData, trainSubject, indexMeanStd, samsung, samsungTidy)
