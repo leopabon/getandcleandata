@@ -36,22 +36,25 @@ trainActivity <- read.table("./y_train.txt", header=FALSE, col.names="Activity.I
 train <- cbind.data.frame(trainSubject, trainActivity, trainData)
 
 ## Merge test and training data
-result <- rbind.data.frame(test, train)
+samsung <- rbind.data.frame(test, train)
 
 ## Set descriptive activity names
 activity <- data.frame(c(1:6), c("Walking", "Walking Upstairs", 
                                  "Walking Downstairs", "Sitting", "Standing",
                                  "Laying"))
 colnames(activity) <- c("Activity.Id", "Activity")
-result <- merge(activity, result, by.x="Activity.Id", by.y="Activity.Id")
-result$Activity.Id = NULL
+samsung <- merge(activity, samsung, by.x="Activity.Id", by.y="Activity.Id")
+samsung$Activity.Id = NULL
 
 ## Appropriately labels the data set with descriptive variable names
 ## This completes the dataset described in steps 1-4 of the project
 features[,2] <- gsub("\\(\\)", "", features[,2])
 features[,2] <- gsub("-", ".", features[,2])
-colnames(result) = c("Activity", "Subject", features[indexMeanStd, 2])
+colnames(samsung) = c("Activity", "Subject", features[indexMeanStd, 2])
 
 ## Creates a second, independent tidy data set with the average of each variable
 ## for each activity and each subject. 
-tidy <- ddply(result, .(Activity, Subject), numcolwise(mean))
+samsungTidy <- ddply(samsung, .(Activity, Subject), numcolwise(mean))
+
+rm(activity, features, test, testActivity, testData, testSubject, train,
+   trainActivity, trainData, trainSubject, indexMeanStd)
