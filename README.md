@@ -1,4 +1,33 @@
-# Course Project - Getting and Cleaning Data
+#Course Project
+##Getting and Cleaning Data
 ========================================================
 
-In fact, the train and the test data sets are "one" thing. They are just split so as to form two groups of data, one which is the "train" data set to be used for example in "training" an algorithm and the "test" data set which is used to check, probably for accuracy, the results of the algorithm ran on the the "train". This is how I see this data set.
+The script assumes that the Samsung files are on the working directory.
+
+The Samsung files can be obttained at the following URL:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+You should unzip it and copy the following files to the working directory:
+
+features.txt
+test/subject_test.txt
+test/X_test.txt
+test/y_test.txt
+train/subject_train.txt
+train/X_train.txt
+train/y_train.txt
+
+After the executing the script, two data.frames will be avaiable:
+
+samsung      -  Data Frame with the solution to steps 1-4.
+samsungTidy  -  Tidy data frame with the variable means for each existing 
+                subject and activity.
+                
+The description for the data on both data frames is provided on codebook file.
+
+
+
+
+
+
