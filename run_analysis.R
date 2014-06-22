@@ -52,8 +52,8 @@ features[,2] <- gsub("\\(\\)", "", features[,2])
 features[,2] <- gsub("-", ".", features[,2])
 colnames(samsung) = c("Activity", "Subject", features[indexMeanStd, 2])
 
-## Creates a second, independent tidy data set with the average of each variable
-## for each activity and each subject. 
+## Creates a tidy data set with the average of each variable for each activity
+## and each subject.
 samsungTidy <- ddply(samsung, .(Activity, Subject), numcolwise(mean))
 
 write.table(samsungTidy, file="tidy.txt", row.names=F, col.names=T)

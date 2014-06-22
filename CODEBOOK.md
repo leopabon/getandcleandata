@@ -1,11 +1,7 @@
 #Codebook
 ========================================================
 
-For the purposes of this project, the train and the test data sets were considerated one thing. They probably are used to train and test an algorithm or some prediction model. So, it has no mean to separate a dimension to identify test and train data.
-
-## samsung
-
-This data frame has the solution for steps 1-4 of the course project.
+The tidy.txt file has the solution for steps 1-5 of the course project. This data set sumarizes the mean of each measure of the 79 samsung data related to mean and std agregated by activity and subject.
 
 It has 2 dimensions for the identification of the subject and the activity measured.
 
@@ -54,9 +50,3 @@ It has 79 measures related to the mean and std measures in the original 561 Sams
 [77] "fBodyBodyGyroMag.std"          "fBodyBodyGyroMag.meanFreq"    
 [79] "fBodyBodyGyroJerkMag.mean"     "fBodyBodyGyroJerkMag.std"     
 [81] "fBodyBodyGyroJerkMag.meanFreq"
-
-## samsungTidy
-
-This data set sumarizes the mean of each measure of the samsung data frame agregated by activity and subject.
-
-It has the same 2 dimensions and 79 measures.
